@@ -1,6 +1,6 @@
 import React from 'react';
+import "index.less"
 import Books from '../Books';
-import './index.css';
 
 function App() {
   return     <div className="App">
