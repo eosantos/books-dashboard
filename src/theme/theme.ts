@@ -11,6 +11,6 @@ export const theme = createMuiTheme({
   },
   typography: {
     fontFamily: ["Montserrat", "sans-serif"].join(","),
-    fontSize: 18,
+    fontSize: 12,
   },
 });
