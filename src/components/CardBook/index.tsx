@@ -60,15 +60,8 @@ export default function RecipeReviewCard({ book }: IProps) {
           title={book.title}
           subheader={book.publishedAt.toString()}
         />
-        {/* <Typography>{title}</Typography> */}
         <Box>
-          <img
-            height="300px"
-            src={
-              "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1562726234l/13496.jpg"
-            }
-            alt="book cover"
-          />
+          <img height="300px" src={book.avatarLink} alt="book cover" />
         </Box>
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="p">
@@ -79,4 +72,3 @@ export default function RecipeReviewCard({ book }: IProps) {
     </Box>
   );
 }
-// }
