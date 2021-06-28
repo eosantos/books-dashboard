@@ -25,7 +25,7 @@ export const Books = () => {
         </Typography>
       </Box>
       <Box className="Books">
-        {books && books.map((book) => <CardBook book={book} />)}
+        {books && books.map((book) => <CardBook book={book} key={book.id} />)}
       </Box>
     </Container>
   );
