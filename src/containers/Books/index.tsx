@@ -1,12 +1,23 @@
 import React from "react";
-//import { Button } from "@material-ui/core";
 import "./index.scss";
 import CardBook from "../../components/CardBook";
 import { books } from "../../types/books";
 import { Container, Typography } from "@material-ui/core";
 import { Box } from "@material-ui/core";
+import { IsLoading } from "../../components/IsLoading";
+import { ErrorToLoad } from "../../components/ErrorToLoad";
 
-export const Books = () => {
+const Books = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+      setCardBook(true);
+      setErrorToLoad(false);
+    }, 6000);
+  });
+
   return (
     <Container className="Page">
       <Box mb={2}>
@@ -15,7 +26,9 @@ export const Books = () => {
         </Typography>
       </Box>
       <Box className="Books">
-        {books && books.map((book) => <CardBook book={book} key={book.id} />)}
+        {loading : <IsLoading> : null}
+        {CardBook {books && books.map((book) => <CardBook book={book} key={book.id} />)}
+        {ErrorToLoad && <ErrorToLoad /> }
       </Box>
     </Container>
   );
