@@ -1,6 +1,90 @@
 # Books Dashboard
 
-- Containers - componentes que possuem estados, são chamados tambémde smart 
-components. É onde fica a lógica das telas
-- compoents - componentes que não possuem estados, são chamados de dummy components
-- 
+## Descrição
+
+Projeto para treinamento utilizando React.
+
+## Dependências do sistema
+
+- [NodeJS >= v14.15.4](https://nodejs.org/en/download/)
+  - NPM v7.11.2
+
+## Estrutura
+
+    books-dashboard
+    ├── src                            (Diretório principal dos arquivos do projeto)
+    |   ├── components                 (Componentes que não possuem estados, são chamados de dummy components)
+    |   ├── containers                 (Componentes que possuem estados, são chamados tambémde smart components. É onde fica a lógica das telas)
+    |   ├── theme                      (Thema da aplicação, com ele é possível sobreescrever alguns temas herdados)
+    |   ├── types                      (Diretório reservado para a tipadem dos elementos)
+    ├── README.md                      (Breve definição)
+    └── ...                            (Outros arquivos de configuração)
+
+### Ferramentas
+
+- [React](https://pt-br.reactjs.org/docs/getting-started.html)
+
+- [SASS](https://sass-lang.com/)
+
+- [TypeScript](https://www.typescriptlang.org/)
+
+- [Git](https://git-scm.com/doc)
+
+- [Material-UI](https://material-ui.com/getting-started/installation/)
+
+### Montagem do ambiente de desenvolvimento
+
+O primeiro passo é clonar o projeto utilizando o método HTTPS ou SSH.
+
+SSH
+
+```sh
+git clone git@github.com:eosantos/books-dashboard.git
+```
+
+HTTPS
+
+```sh
+git clone https://github.com/eosantos/books-dashboard.git
+```
+
+### Instalar dependências do projeto
+
+Com o comando abaixo instalamos todos os pacotes definidos no package.json para configuração do servidor local:
+
+```sh
+npm i
+```
+
+### Acessando a aplicação
+
+Para iniciar o projeto basta executar o comando abaixo:
+
+```sh
+npm start
+```
+
+Após a execução do comando acima basta abrir o link `http://localhost:3000`.
+
+### Commit
+
+Para nossos commits utilizamos a seguinte estrutura:
+
+```
+feat: mensagem curta
+^--^  ^------------^
+|     |
+|     +-> Resumo da alteração
+|
++-------> Tipos: chore, docs, feat, fix, refactor, style, or test.
+```
+
+#### Exemplos:
+
+- `feat/feature`: (novo recurso para o usuário, não um novo recurso para script de compilação)
+- `fix`: (correção de bug para o usuário, não uma correção para um script de construção)
+- `docs`: (alterações na documentação)
+- `style`: (formatação, ponto e vírgula faltando etc; sem alteração do código de produção)
+- `refactor`: (refatorando o código de produção, por exemplo, renomeando uma variável)
+- `test`: (adicionando testes ausentes, testes de refatoração; nenhuma alteração no código de produção)
+- `chore`: (atualização de tarefas e etc; sem alteração do código de produção)
