@@ -13,13 +13,14 @@ const Books = () => {
   const [loading, setLoading] = useState(true);
   const [cardBook, setCardBook] = useState(false);
   const [errorToLoad, setErrorToLoad] = useState(false);
+  const [listBooks, setListBooks] = useState(books);
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
       setCardBook(true);
       setErrorToLoad(false);
-    }, 6000);
+    }, 2000);
   });
 
   return (
@@ -32,8 +33,15 @@ const Books = () => {
       <Box className="Books">
         {loading ? <Loading /> : null}
         {cardBook &&
-          books &&
-          books.map((book) => <CardBook book={book} key={book.id} />)}
+          listBooks &&
+          listBooks.map((book) => (
+            <CardBook
+              book={book}
+              listBooks={listBooks}
+              setListBooks={setListBooks}
+              key={book.id}
+            />
+          ))}
         {errorToLoad && <ErrorToLoad />}
       </Box>
     </Container>

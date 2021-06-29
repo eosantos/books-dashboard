@@ -19,15 +19,22 @@ const useStyles = makeStyles((theme: Theme) =>
 
 interface IProps {
   book: Book;
+  listBooks: Book[];
+  setListBooks: any;
 }
 
-export default function RecipeReviewCard({ book }: IProps) {
+export default function CardBook({ book, listBooks, setListBooks }: IProps) {
   const classes = useStyles();
 
   const defaultProps = {
     bgcolor: "background.paper",
     borderColor: "text.primary",
   };
+
+  function deleteCard() {
+    setListBooks(listBooks.filter((b: Book) => b.id !== book.id));
+    console.log(book);
+  }
 
   return (
     <Box p={2} m={2} borderRadius={16} {...defaultProps}>
@@ -36,7 +43,7 @@ export default function RecipeReviewCard({ book }: IProps) {
           title={book.title}
           subheader={book.publishedAt.toString()}
           action={
-            <IconButton aria-label="settings">
+            <IconButton aria-label="settings" onClick={deleteCard}>
               <MoreVertIcon />
             </IconButton>
           }

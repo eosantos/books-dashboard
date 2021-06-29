@@ -12,7 +12,7 @@ export interface Book {
   amountOfRatings: number;
 }
 
-export const books: Book[] = [
+export let books: Book[] = [
   {
     id: "1",
     title: "Batman: Year One",
