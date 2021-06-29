@@ -1,11 +1,13 @@
-import React from 'react';
-import "./index.scss"
-import Books from '../Books';
+import React from "react";
+import "./index.scss";
+import Books from "../Books";
 
 function App() {
-  return     <div className="App">
-    <Books />
-  </div>;
+  return (
+    <div className="App">
+      <Books />
+    </div>
+  );
 }
 
 export default App;

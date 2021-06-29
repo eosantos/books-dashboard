@@ -23,42 +23,23 @@ interface IProps {
 
 export default function RecipeReviewCard({ book }: IProps) {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
 
   const defaultProps = {
     bgcolor: "background.paper",
     borderColor: "text.primary",
   };
 
-  // interface ICardBookProps {
-  //   title: string;
-  //   // date: date;
-  //   avatarLink: string;
-  //   useEllipssummary: string;
-  // }
-
-  // const CardBook: React.FC<ICardBookProps> = ({
-  //   title,
-  //   // date,
-  //   avatarLink,
-  //   useEllipssummary,
-  // }) => {
   return (
     <Box p={2} m={2} borderRadius={16} {...defaultProps}>
       <Card className={classes.root}>
         <CardHeader
+          title={book.title}
+          subheader={book.publishedAt.toString()}
           action={
             <IconButton aria-label="settings">
               <MoreVertIcon />
             </IconButton>
           }
-          title={book.title}
-          subheader={book.publishedAt.toString()}
         />
         <Box>
           <img height="300px" src={book.avatarLink} alt="book cover" />

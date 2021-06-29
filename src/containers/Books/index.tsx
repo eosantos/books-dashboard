@@ -6,16 +6,6 @@ import { books } from "../../types/books";
 import { Container, Typography } from "@material-ui/core";
 import { Box } from "@material-ui/core";
 
-// interface IProps {
-//   handleChange: () => void;
-// }
-
-// export const Books = ({ handleChange }: IProps) => {
-//   const [loading, setLoading] = React.useState<boolean>(false);
-//   useEffect(() => {
-//     console.log("useEffect");
-//   }, []);
-
 export const Books = () => {
   return (
     <Container className="Page">
