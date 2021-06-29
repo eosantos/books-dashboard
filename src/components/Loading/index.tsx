@@ -9,7 +9,7 @@ function CircularProgressWithLabel(
   props: CircularProgressProps & { value: number }
 ) {
   return (
-    <Box position="relative" display="inline-flex">
+    <Box position="relative" display="inline-flex" p={16}>
       <CircularProgress variant="determinate" {...props} />
       <Box
         top={0}
@@ -24,14 +24,14 @@ function CircularProgressWithLabel(
         <Typography
           variant="caption"
           component="div"
-          color="textSecondary"
+          color="secondary"
         >{`${Math.round(props.value)}%`}</Typography>
       </Box>
     </Box>
   );
 }
 
-function IsLoading() {
+function Loading() {
   const [progress, setProgress] = React.useState(10);
 
   React.useEffect(() => {
@@ -45,7 +45,7 @@ function IsLoading() {
     };
   }, []);
 
-  return <CircularProgressWithLabel value={progress} />;
+  return <CircularProgressWithLabel color="secondary" value={progress} />;
 }
 
-export default IsLoading;
+export default Loading;

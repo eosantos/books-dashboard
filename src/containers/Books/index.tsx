@@ -4,11 +4,15 @@ import CardBook from "../../components/CardBook";
 import { books } from "../../types/books";
 import { Container, Typography } from "@material-ui/core";
 import { Box } from "@material-ui/core";
-import { IsLoading } from "../../components/IsLoading";
-import { ErrorToLoad } from "../../components/ErrorToLoad";
+import ErrorToLoad from "../../components/ErrorToLoad";
+import { useEffect } from "react";
+import { useState } from "react";
+import Loading from "../../components/Loading";
 
 const Books = () => {
   const [loading, setLoading] = useState(true);
+  const [cardBook, setCardBook] = useState(false);
+  const [errorToLoad, setErrorToLoad] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -26,9 +30,11 @@ const Books = () => {
         </Typography>
       </Box>
       <Box className="Books">
-        {loading : <IsLoading> : null}
-        {CardBook {books && books.map((book) => <CardBook book={book} key={book.id} />)}
-        {ErrorToLoad && <ErrorToLoad /> }
+        {loading ? <Loading /> : null}
+        {cardBook &&
+          books &&
+          books.map((book) => <CardBook book={book} key={book.id} />)}
+        {errorToLoad && <ErrorToLoad />}
       </Box>
     </Container>
   );
