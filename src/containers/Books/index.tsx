@@ -10,19 +10,21 @@ import { useState } from "react";
 import Loading from "../../components/Loading";
 import { Fab } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
+import { useHistory } from "react-router-dom";
 
 const Books = () => {
   const [loading, setLoading] = useState(true);
   const [cardBook, setCardBook] = useState(false);
   const [errorToLoad, setErrorToLoad] = useState(false);
   const [listBooks, setListBooks] = useState(books);
+  const histo = useHistory();
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
       setCardBook(true);
       setErrorToLoad(false);
-    }, 2000);
+    }, 1000);
   });
 
   return (
@@ -33,7 +35,11 @@ const Books = () => {
         </Typography>
       </Box>
       <Box textAlign="center" p={2}>
-        <Fab color="secondary" aria-label="add">
+        <Fab
+          color="secondary"
+          aria-label="add"
+          onClick={() => histo.push("/cadastro")}
+        >
           <AddIcon />
         </Fab>
       </Box>
