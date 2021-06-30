@@ -8,6 +8,8 @@ import ErrorToLoad from "../../components/ErrorToLoad";
 import { useEffect } from "react";
 import { useState } from "react";
 import Loading from "../../components/Loading";
+import { Fab } from "@material-ui/core";
+import AddIcon from "@material-ui/icons/Add";
 
 const Books = () => {
   const [loading, setLoading] = useState(true);
@@ -27,8 +29,13 @@ const Books = () => {
     <Container className="Page">
       <Box mb={2}>
         <Typography variant="h3" color="secondary" align="center">
-          Top 10 Edu Books
+          Top 10 Edu Books =)
         </Typography>
+      </Box>
+      <Box textAlign="center" p={2}>
+        <Fab color="secondary" aria-label="add">
+          <AddIcon />
+        </Fab>
       </Box>
       <Box className="Books">
         {loading ? <Loading /> : null}

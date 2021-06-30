@@ -9,7 +9,7 @@ function CircularProgressWithLabel(
   props: CircularProgressProps & { value: number }
 ) {
   return (
-    <Box position="relative" display="inline-flex" p={16}>
+    <Box position="relative" display="inline-flex" p="32vh">
       <CircularProgress variant="determinate" {...props} />
       <Box
         top={0}
